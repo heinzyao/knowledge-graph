@@ -1,5 +1,5 @@
 [project]
-name = "knowledge-graph"
+name = "easy-knowledge-graph"
 version = "0.1.0"
 description = "Excel Interactive Knowledge Graph"
 requires-python = ">=3.11"

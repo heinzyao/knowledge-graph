@@ -1,4 +1,4 @@
-# Excel Knowledge Graph
+# Easy Knowledge Graph
 
 以 Excel 檔案為資料來源的互動式知識圖譜，靈感來自 [Obsidian Graph View](https://obsidian.md/)。透過瀏覽器即可視覺化探索本地 `.xlsx` 檔案之間的關聯網路。
 
@@ -32,8 +32,8 @@
 ### 1. 安裝依賴
 
 ```bash
-git clone https://github.com/heinzyao/knowledge-graph.git
-cd knowledge-graph
+git clone https://github.com/heinzyao/easy-knowledge-graph.git
+cd easy-knowledge-graph
 uv sync
 ```
 
@@ -98,7 +98,7 @@ uv run python main.py /path/to/your/excel/folder
 ## 專案結構
 
 ```
-knowledge-graph/
+easy-knowledge-graph/
 ├── main.py              # FastAPI 應用程式進入點
 ├── pyproject.toml       # 專案設定與依賴宣告
 ├── create_sample.py     # 產生範例 Excel 資料
