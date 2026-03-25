@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel 知識圖譜</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- Toolbar -->
+<div id="toolbar">
+    <div id="toolbar-left">
+        <span id="app-title">📊 知識圖譜</span>
+        <input type="text" id="search-input" placeholder="搜尋節點名稱…" autocomplete="off">
+        <select id="tag-filter">
+            <option value="">全部標籤</option>
+        </select>
+    </div>
+    <div id="toolbar-right">
+        <label class="toggle-label" title="顯示由儲存格值自動偵測的隱式連結">
+            <input type="checkbox" id="implicit-toggle"> 隱式連結
+        </label>
+        <button id="refresh-btn" title="重新掃描資料夾">⟳ 重新整理</button>
+        <span id="node-count"></span>
+    </div>
+</div>
+
+<!-- Main -->
+<div id="main">
+
+    <!-- Graph -->
+    <div id="graph-container">
+        <svg id="graph-svg">
+            <defs>
+                <marker id="arrow-explicit" markerWidth="8" markerHeight="6"
+                        refX="12" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#555"/>
+                </marker>
+                <marker id="arrow-implicit" markerWidth="8" markerHeight="6"
+                        refX="12" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#3a3a3a"/>
+                </marker>
+            </defs>
+        </svg>
+
+        <!-- Legend -->
+        <div id="legend">
+            <div id="legend-title">標籤色彩</div>
+            <div id="legend-items"></div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading">載入中…</div>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="hidden">
+            <div class="empty-icon">📂</div>
+            <div>尚未找到任何 Excel 檔案</div>
+            <div style="font-size:11px">請將 .xlsx 檔案放入資料夾後重新整理</div>
+        </div>
+    </div>
+
+    <!-- Preview panel -->
+    <div id="panel" class="panel-hidden">
+        <div id="panel-header">
+            <div id="panel-title">—</div>
+            <button id="panel-close" title="關閉">✕</button>
+        </div>
+        <div id="panel-meta"></div>
+        <div id="panel-tabs"></div>
+        <div id="panel-table-container">
+            <table id="panel-table"></table>
+        </div>
+        <div id="panel-footer"></div>
+    </div>
+
+</div>
+
+<!-- Tooltip -->
+<div id="tooltip"></div>
+
+<script src="/static/graph.js"></script>
+<script src="/static/panel.js"></script>
+</body>
+</html>
