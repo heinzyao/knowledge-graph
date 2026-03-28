@@ -55,6 +55,27 @@ wheels = [
 ]
 
 [[package]]
+name = "easy-knowledge-graph"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "fastapi" },
+    { name = "networkx" },
+    { name = "openpyxl" },
+    { name = "uvicorn", extra = ["standard"] },
+    { name = "watchdog" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi", specifier = ">=0.115" },
+    { name = "networkx", specifier = ">=3.3" },
+    { name = "openpyxl", specifier = ">=3.1" },
+    { name = "uvicorn", extras = ["standard"], specifier = ">=0.30" },
+    { name = "watchdog", specifier = ">=4.0" },
+]
+
+[[package]]
 name = "et-xmlfile"
 version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -131,27 +152,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz", hash = "sha256:795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902", size = 194582, upload-time = "2025-10-12T14:55:20.501Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl", hash = "sha256:771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea", size = 71008, upload-time = "2025-10-12T14:55:18.883Z" },
-]
-
-[[package]]
-name = "knowledge-graph"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "fastapi" },
-    { name = "networkx" },
-    { name = "openpyxl" },
-    { name = "uvicorn", extra = ["standard"] },
-    { name = "watchdog" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", specifier = ">=0.115" },
-    { name = "networkx", specifier = ">=3.3" },
-    { name = "openpyxl", specifier = ">=3.1" },
-    { name = "uvicorn", extras = ["standard"], specifier = ">=0.30" },
-    { name = "watchdog", specifier = ">=4.0" },
 ]
 
 [[package]]
